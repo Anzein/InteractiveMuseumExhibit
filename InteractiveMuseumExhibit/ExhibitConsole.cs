@@ -10,13 +10,16 @@ namespace InteractiveMuseumExhibit
 {
     public class ExhibitConsole
     {
-        private int _fixedNumberOfDisplayScreens;
         private DisplayScreen[] _displayScreens;
         private PowerManagementSystem _powerManagementSystem;
 
         public ExhibitConsole(int fixedNumberOfDisplayScreens)
         {
-            _fixedNumberOfDisplayScreens = fixedNumberOfDisplayScreens;
+            if (fixedNumberOfDisplayScreens <= 0)
+            {
+                throw new ArgumentException("Fixed number of display screens must be positive.");
+            }
+
             _displayScreens = new DisplayScreen[fixedNumberOfDisplayScreens];
             _powerManagementSystem = new PowerManagementSystem();
         }
@@ -28,7 +31,7 @@ namespace InteractiveMuseumExhibit
 
         public void TurnOff()
         {
-            _powerManagementSystem.GoActivatedMode();
+            _powerManagementSystem.GoStandByMode();
         }
 
         public void AddDisplayScreen(int displayScreenIndex, DisplayScreen displayScreen)
@@ -53,7 +56,7 @@ namespace InteractiveMuseumExhibit
 
         private void ValidateDisplayScreenIndex(int displayScreenIndex)
         {
-            if (displayScreenIndex < 0 || displayScreenIndex > _displayScreens.Length)
+            if (displayScreenIndex < 0 || displayScreenIndex > _displayScreens.Length - 1)
             {
                 throw new ArgumentOutOfRangeException("Invalid dipslay index!");
             }
@@ -65,6 +68,11 @@ namespace InteractiveMuseumExhibit
 
             foreach (var screen in _displayScreens)
             {
+                if (screen == null)
+                {
+                    continue;
+                }
+
                 foreach (var contentItem in screen.GetContentItems())
                 {
                     if (contentItem.GetContentItemType() == contentItemType)

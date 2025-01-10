@@ -10,20 +10,21 @@ namespace InteractiveMuseumExhibit
 {
     public class PowerManagementSystem
     {
-        private PowerManagementSystemModes _mode;
+        private PowerManagementSystemModes _currentMode;
+
         public PowerManagementSystem()
         {
-            _mode = PowerManagementSystemModes.StandBy;
+            _currentMode = PowerManagementSystemModes.StandBy;
         }
 
         public void GoActivatedMode()
         {
-            _mode = PowerManagementSystemModes.Activated;
+            _currentMode = PowerManagementSystemModes.Activated;
         }
 
         public void GoStandByMode()
         {
-            _mode |= PowerManagementSystemModes.StandBy;
+            _currentMode = PowerManagementSystemModes.StandBy;
         }
     }
 }

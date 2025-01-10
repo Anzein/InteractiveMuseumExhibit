@@ -10,14 +10,14 @@ namespace InteractiveMuseumExhibit.ContentItems
     {
         private readonly string _title;
         private readonly string _topic;
-        private readonly ContentItemDataSizes _dataSize;
+        private readonly ContentItemDataSizes _itemDataSize;
         private readonly ContentItemTypes _itemType;
 
-        public ContentItem(string title, string topic, ContentItemDataSizes dataSize, ContentItemTypes itemType)
+        public ContentItem(string title, string topic, ContentItemDataSizes itemDataSize, ContentItemTypes itemType)
         {
             _title = title;
             _topic = topic;
-            _dataSize = dataSize;
+            _itemDataSize = itemDataSize;
             _itemType = itemType;
         }
 
