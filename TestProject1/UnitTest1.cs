@@ -33,7 +33,7 @@ namespace TestProject1
 
         [TestCase(ContentItemTypes.Image, "German Shepard.png")]
         [TestCase(ContentItemTypes.Three_Dimensional_Model, "3d German Shepard")]
-        [TestCase(ContentItemTypes.Interactive_Geographical_Data, "map")]
+        [TestCase(ContentItemTypes.Map, "map")]
         public void ListAllDisplayScreensByContentItemType_Test(ContentItemTypes contentItemType, string expectedName)
         {
             var results = exhibitConsole.ListAllDisplayScreensByContentItemType(contentItemType);
