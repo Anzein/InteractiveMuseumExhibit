@@ -12,6 +12,7 @@ namespace InteractiveMuseumExhibit.ContentItems
         Text,
         Three_Dimensional_Model,
         Animation,
+        Map,
         Interactive_Geographical_Data
     }
 }

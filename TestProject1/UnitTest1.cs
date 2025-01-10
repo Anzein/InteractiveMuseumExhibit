@@ -24,7 +24,7 @@ namespace TestProject1
 
             lcdScreen.AddContentItem(new ContentItem("German Shepard.png", "dogs", ContentItemDataSizes.Small, ContentItemTypes.Image));
             holographicScreen.AddContentItem(new ContentItem("3d German Shepard", "dogs", ContentItemDataSizes.Medium, ContentItemTypes.Three_Dimensional_Model));
-            interactiveMapScreen.AddContentItem(new ContentItem("map", "maps", ContentItemDataSizes.Large, ContentItemTypes.Interactive_Geographical_Data));
+            interactiveMapScreen.AddContentItem(new ContentItem("map", "maps", ContentItemDataSizes.Large, ContentItemTypes.Map));
 
             exhibitConsole.AddDisplayScreen(0, lcdScreen);
             exhibitConsole.AddDisplayScreen(1, holographicScreen);

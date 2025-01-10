@@ -11,6 +11,7 @@ namespace InteractiveMuseumExhibit.DisplayScreens
     {
         public override ContentItemTypes[] SupportedContentItemTypes => new ContentItemTypes[]
         {
+            ContentItemTypes.Map,
             ContentItemTypes.Interactive_Geographical_Data,
         };
     }
